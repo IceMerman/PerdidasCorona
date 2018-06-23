@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhPreferNumbers</set>
+  </property>
   <widget class="QTableWidget" name="TWConductor">
    <property name="geometry">
     <rect>
@@ -34,18 +37,31 @@
      <height>192</height>
     </size>
    </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
    <property name="rowCount">
     <number>1</number>
    </property>
    <property name="columnCount">
-    <number>3</number>
+    <number>2</number>
    </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>150</number>
+   </attribute>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>33</number>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>20</number>
+   </attribute>
    <row/>
-   <column>
-    <property name="text">
-     <string>ID</string>
-    </property>
-   </column>
    <column>
     <property name="text">
      <string>X</string>
@@ -201,19 +217,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label_11">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>330</y>
-     <width>181</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nota: &lt;/p&gt;&lt;p&gt;1) campo para distribucion por fase&lt;/p&gt;&lt;p&gt;2) distribución por circuito&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
   <widget class="QTableWidget" name="TWSubconductor">
    <property name="geometry">
     <rect>
@@ -229,18 +232,28 @@
      <height>192</height>
     </size>
    </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
    <property name="rowCount">
     <number>1</number>
    </property>
    <property name="columnCount">
-    <number>3</number>
+    <number>2</number>
    </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>150</number>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>20</number>
+   </attribute>
    <row/>
-   <column>
-    <property name="text">
-     <string>ID</string>
-    </property>
-   </column>
    <column>
     <property name="text">
      <string>X</string>
@@ -281,11 +294,11 @@
     <number>10</number>
    </property>
   </widget>
-  <widget class="QPushButton" name="PBShowSubc">
+  <widget class="QPushButton" name="PBShowCond">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>270</y>
+     <x>350</x>
+     <y>390</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -294,17 +307,62 @@
     <string>Visualizar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="PBShowCond">
+  <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>350</x>
+     <y>50</y>
+     <width>70</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dibujar</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_2">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>270</y>
+     <width>70</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dibujar</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clcTW1">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
      <y>70</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Visualizar</string>
+    <string>limpiar tabla</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clcTW2">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>290</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>limpiar tabla</string>
    </property>
   </widget>
  </widget>
@@ -321,5 +379,38 @@
   <tabstop>TWConductor</tabstop>
  </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>clcTW1</sender>
+   <signal>clicked()</signal>
+   <receiver>TWConductor</receiver>
+   <slot>clearContents()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>418</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>478</x>
+     <y>79</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clcTW2</sender>
+   <signal>clicked()</signal>
+   <receiver>TWSubconductor</receiver>
+   <slot>clearContents()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>418</x>
+     <y>307</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
