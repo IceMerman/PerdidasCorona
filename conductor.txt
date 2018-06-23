@@ -2,8 +2,8 @@
 % ACSR 477 MCM
 
 *           |numero de hilos   |
-*conductor  |aluminio  |acero  |calibre[MCM] |diametro[mm] |carga_rotura[kg] |peso[kg/km] |Rac[ohm/km] |costo[USD]
->Pelican   |18        |1      |477          |20.67        |5334             |769.8       |0.145       |1507715.70
->Flicker   |24        |7      |477          |21.49        |7784             |913.6       |0.143       |1696180.17
->Hawk      |26        |7      |477          |21.79        |8863             |977         |0.142       |1771565.95
->Hen       |30        |7      |477          |22.42        |10803            |1112        |0.142       |1884644.63
+>conductor  |aluminio  |acero  |calibre[MCM] |diametro[mm] |carga_rotura[kg] |peso[kg/km] |Rac[ohm/km] |costo[USD]
+>Pelican    |18        |1      |477          |20.67        |5334             |769.8       |0.145       |1507715.70
+>Flicker    |24        |7      |477          |21.49        |7784             |913.6       |0.143       |1696180.17
+>Hawk       |26        |7      |477          |21.79        |8863             |977         |0.142       |1771565.95
+>Hen        |30        |7      |477          |22.42        |10803            |1112        |0.142       |1884644.63
